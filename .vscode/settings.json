@@ -1,0 +1,13 @@
+{
+  "idf.customExtraVars": {
+    "IDF_TARGET": "esp32c6"
+  },
+  "clangd.path": "C:\\Users\\miros\\.espressif\\tools\\esp-clang\\esp-18.1.2_20240912\\esp-clang\\bin\\clangd.exe",
+  "clangd.arguments": [
+    "--background-index",
+    "--query-driver=**",
+    "--compile-commands-dir=c:\\Users\\miros\\Desktop\\A git\\sip_call\\build"
+  ],
+  "idf.flashType": "UART",
+  "idf.portWin": "COM17"
+}

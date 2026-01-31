@@ -18,9 +18,42 @@ Programming
 
 The source code is mixed C and C++.
 
-This application is to be used with `Espressif IoT Development Framework`_ (ESP-IDF). 
+This application is to be used with `Espressif IoT Development Framework`_ (ESP-IDF) v5.x or later.
 
-Please check ESP-IDF docs for getting started instructions.
+Building
+~~~~~~~~
+
+The project uses the CMake build system. To build:
+
+1. Install ESP-IDF v5.x or later following the `official installation guide <https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/>`_
+
+2. Configure the project::
+
+    idf.py menuconfig
+
+3. Navigate to "SipCall Configuration" to set your WiFi credentials, SIP server details, and other settings.
+
+4. Build the project::
+
+    idf.py build
+
+5. Flash to your ESP32 device::
+
+    idf.py -p PORT flash monitor
+
+Replace PORT with your ESP32's serial port (e.g., /dev/ttyUSB0 on Linux or COM3 on Windows).
+
+Migration Note
+~~~~~~~~~~~~~~
+
+This project has been migrated from the legacy Make build system to the modern CMake build system to support ESP-IDF v5.x and later. Key changes include:
+
+- Replaced deprecated ``tcpip_adapter`` with ``esp_netif``
+- Updated event loop API to use the new event system
+- Replaced ``portTICK_RATE_MS`` with ``portTICK_PERIOD_MS``
+- All component.mk and Makefile files replaced with CMakeLists.txt
+
+For older ESP-IDF versions (v3.x), please use an earlier commit before the migration.
 
 
 Hardware
