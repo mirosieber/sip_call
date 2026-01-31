@@ -53,7 +53,7 @@ static void rtp_task(void* pvParameters)
     LwipUdpClient* socket = (LwipUdpClient*)pvParameters;
     for (;;) {
         if (!socket->is_initialized()) {
-            vTaskDelay(2000 / portTICK_RATE_MS);
+            vTaskDelay(2000 / portTICK_PERIOD_MS);
             ESP_LOGI("RTP", "niezainicjowane");
             i2s_init();
             display_init();
@@ -318,7 +318,7 @@ private:
             }
             //return;
         } else if (m_state == SipState::ERROR) {
-            vTaskDelay(2000 / portTICK_RATE_MS);
+            vTaskDelay(2000 / portTICK_PERIOD_MS);
             m_sip_sequence_number++;
             m_state = SipState::IDLE;
             log_state_transition(SipState::ERROR, m_state);
