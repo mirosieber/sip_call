@@ -1,4 +1,7 @@
 build/
 sdkconfig.old
 sdkconfig
+sdkconfig.defaults
 compile_commands.json
+dependencies.lock
+managed_components/
