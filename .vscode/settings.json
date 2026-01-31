@@ -7,5 +7,7 @@
     "--background-index",
     "--query-driver=**",
     "--compile-commands-dir=c:\\Users\\miros\\Desktop\\A git\\sip_call\\build"
-  ]
+  ],
+  "idf.flashType": "UART",
+  "idf.portWin": "COM17"
 }

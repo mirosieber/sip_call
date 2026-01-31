@@ -198,16 +198,18 @@ public:
       ESP_LOGW(TAG, "Select error: %d, errno=%d", readable, errno);
     }
     if (readable <= 0) {
+      ESP_LOGV(TAG, "Select timeout or no data (readable=%d)", readable);
       return "";
     }
 
+    ESP_LOGI(TAG, "Socket readable, attempting recv...");
     ssize_t len = recv(m_socket, m_rx_buffer.data(), m_rx_buffer.size(), 0);
     if (len <= 0) {
-      ESP_LOGD(TAG, "Received no data: %d, errno=%d", len, errno);
+      ESP_LOGW(TAG, "Received no data: %d, errno=%d", len, errno);
       return "";
     }
     m_rx_buffer[len] = '\0';
-    ESP_LOGD(TAG, "Received %d byte", len);
+    ESP_LOGI(TAG, "Received %d bytes from socket", len);
     ESP_LOGV(TAG, "Received following data: %s", m_rx_buffer.data());
 
     return std::string(m_rx_buffer.data(), len);
