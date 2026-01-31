@@ -278,8 +278,8 @@ void display_init(void)
 
         display_text("ESP32 VoIP PHONE\n----------------\n                \nstatus:  LOADING\n                \n                \n                \n[o]-rst         ");
         
-		vTaskDelay(1000 / portTICK_PERIOD_MS);
-		dsp_wait_wifi();
+        vTaskDelay(1000 / portTICK_PERIOD_MS);
+        dsp_wait_wifi();
         //xTaskCreate(&task_ssd1306_display_pattern, "ssd1306_display_pattern",  2048, NULL, 6, NULL);
         //xTaskCreate(&task_ssd1306_contrast, "ssid1306_contrast", 2048, NULL, 6, NULL);
         //xTaskCreate(&task_ssd1306_scroll, "ssid1306_scroll", 2048, NULL, 6, NULL);

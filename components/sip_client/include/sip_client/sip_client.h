@@ -54,7 +54,7 @@ static void rtp_task(void* pvParameters)
     for (;;) {
         if (!socket->is_initialized()) {
             vTaskDelay(2000 / portTICK_PERIOD_MS);
-            ESP_LOGI("RTP", "niezainicjowane");
+            ESP_LOGI("RTP", "not initialized");
             i2s_init();
             display_init();
             continue;
