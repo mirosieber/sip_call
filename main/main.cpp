@@ -31,8 +31,8 @@
 
 #include <string.h>
 
-static constexpr auto BELL_GPIO_PIN =
-    static_cast<gpio_num_t>(CONFIG_BELL_INPUT_GPIO);
+static constexpr auto BELL_GPIO_PIN = static_cast<gpio_num_t>(9);
+// static_cast<gpio_num_t>(CONFIG_BELL_INPUT_GPIO);
 static constexpr auto RING_DURATION_TIMEOUT_MSEC = CONFIG_RING_DURATION;
 
 #if CONFIG_POWER_SAVE_MODEM
